@@ -1,0 +1,34 @@
+{
+    "n_scls_per_event":{
+        "data_bins": 10,
+        "data_opt": "lin",
+        "binning_columns": ["reco_raw_energy", "reco_barycenter_eta", "reco_barycenter_phi"],
+        "binning_bins": [6, 6, 6],
+        "binning_opt": ["log", "lin", "lin"],
+        "plot": ["unroll", "unroll", "unroll"]
+    },
+    "reco_barycenter_eta":{
+        "data_bins": 6,
+        "data_opt": "lin",
+        "binning_columns": ["reco_barycenter_phi", "reco_raw_energy"],
+        "binning_bins": [6, 6],
+        "binning_opt": ["lin", "log"],
+        "plot": ["unroll", "unroll"]
+    },
+    "reco_raw_pt":{
+        "data_bins": 6,
+        "data_opt": "log",
+        "binning_columns": ["reco_barycenter_eta", "reco_barycenter_phi"],
+        "binning_bins": [6, 6],
+        "binning_opt": ["lin", "lin"],
+        "plot": ["unroll", "unroll"]
+    },
+    "reco_raw_energy":{
+        "data_bins": 6,
+        "data_opt": "log",
+        "binning_columns": ["reco_barycenter_eta", "reco_barycenter_phi"],
+        "binning_bins": [6, 6, 1, 1],
+        "binning_opt": ["lin", "lin", "lin", "lin"],
+        "plot": ["unroll", "unroll", "unroll", "unroll"]
+    }
+}

@@ -1,0 +1,90 @@
+{
+    "n_scls_per_cp":{
+        "data_bins": 10,
+        "data_opt": "lin",
+        "binning_columns": ["sim_barycenter_eta", "sim_barycenter_phi", "sim_raw_energy"],
+        "binning_bins": [5, 5, 6],
+        "binning_opt": ["lin", "lin", "log"],
+        "plot": ["unroll", "unroll", "unroll"]
+    },
+    "n_tr_per_scls":{
+        "data_bins": 10,
+        "data_opt": "lin",
+        "binning_columns": ["sim_raw_energy", "sim_barycenter_eta", "hd", "ld"],
+        "binning_bins": [6, 5, 6, 6],
+        "binning_opt": ["log", "lin", "log", "log"],
+        "plot": ["unroll", "unroll", "unroll", "unroll"]
+    },
+    "reco_raw_energy":{
+        "data_bins": 6,
+        "data_opt": "log",
+        "binning_columns": ["sim_barycenter_eta", "sim_barycenter_phi"],
+        "binning_bins": [5, 5],
+        "binning_opt": ["lin", "lin"],
+        "plot": ["unroll", "unroll"]
+    },
+    "reco_barycenter_eta":{
+        "data_bins": 6,
+        "data_opt": "lin",
+        "binning_columns": ["sim_barycenter_phi", "sim_barycenter_eta"],
+        "binning_bins": [6, 6],
+        "binning_opt": ["lin", "lin"],
+        "plot": ["unroll", "2d"]
+    },
+    "reco_raw_pt":{
+        "data_bins": 6,
+        "data_opt": "log",
+        "binning_columns": ["sim_barycenter_eta", "sim_barycenter_phi"],
+        "binning_bins": [6, 6],
+        "binning_opt": ["lin", "lin"],
+        "plot": ["unroll", "2d"]
+    },
+    "sim_raw_energy":{
+        "data_bins": 6,
+        "data_opt": "log",
+        "binning_columns": ["sim_barycenter_eta"],
+        "binning_bins": [1],
+        "binning_opt": ["lin"],
+        "plot": ["unroll"]
+    },
+    "delta_barycenter_eta":{
+        "data_bins": 10,
+        "data_opt": "lin",
+        "binning_columns": ["sim_raw_energy", "sim_barycenter_eta", "sim_barycenter_phi", "hd", "ld"],
+        "binning_bins": [3, 3, 3, 3, 3],
+        "binning_opt": ["log", "lin", "lin", "log", "log"],
+        "plot": ["unroll", "2D", "2D", "unroll", "unroll"]
+    },
+    "delta_barycenter_phi":{
+        "data_bins": 10,
+        "data_opt": "lin",
+        "binning_columns": ["sim_raw_energy", "sim_barycenter_phi"],
+        "binning_bins": [5,6],
+        "binning_opt": ["log", "lin"],
+        "plot": ["unroll", "2d"]
+    },
+    "simToReco_score":{
+        "data_bins": 3,
+        "data_opt": "lin",
+        "binning_columns": ["recoToSim_score", "raw_energy_ratio"],
+        "binning_bins": [3, 3],
+        "binning_opt": ["lin", "lin"],
+        "plot": ["2d", "2d"]
+    },
+    "raw_energy_ratio":{
+        "data_bins": 50,
+        "data_opt": "lin",
+        "binning_columns": ["sim_raw_energy"],
+        "binning_bins": [5],
+        "binning_opt": ["log"],
+        "plot": ["unroll"]
+    },
+    "regressed_energy_ratio":{
+        "data_bins": 50,
+        "data_opt": "lin",
+        "binning_columns": ["sim_raw_energy"],
+        "binning_bins": [5],
+        "binning_opt": ["log"],
+        "plot": ["unroll"]
+    }
+}
