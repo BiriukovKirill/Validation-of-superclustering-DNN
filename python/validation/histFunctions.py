@@ -31,7 +31,7 @@ def getCI(efficiency, n_events, ci_opt: str):
 def efficiencyLabel(efficiency):
     ef = str(efficiency)
     try:
-        return ef.split('.')[1]
+        return '_'.join(ef.split('.'))
     except:
         return ef
     

@@ -36,11 +36,17 @@ df_ = pd.read_csv(args.input)
 
 print(args.efficiency, type(args.efficiency), args.efficiency[0])
 
-# transform efficiency into floats
-if args.efficiency == "[]":
+# If the df doesn't contain 'simToReco_score' column, it's impossible to make the efficiency plots
+# Therefore, we just skip the step of transforming the efficiency str into list(float)
+if "simToReco_score" not in df_.columns:
     args.efficiency = []
-else:
-    args.efficiency = [float(num.strip()) for num in args.efficiency.split(',')]
+
+# transform efficiency into floats
+if isinstance(args.efficiency, str) and ("simToReco_score" in df_.columns):
+    if args.efficiency == "[]":
+        args.efficiency = []
+    else:
+        args.efficiency = [float(num.strip()) for num in args.efficiency.split(',')]
 
 efficiency_dfs = []
 for ef in args.efficiency:
