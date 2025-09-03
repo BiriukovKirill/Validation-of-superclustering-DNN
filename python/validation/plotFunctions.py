@@ -77,7 +77,7 @@ def makeIndPlots(data, fit_data, data_var, binning_var, hd_ld_opt, pu, path_to_s
         max_e = y_edges[i + 1]
         binning_var_label = var_labels[binning_var]
         hist_label = rf'{min_e:.2f} < {binning_var_label} < {max_e:.2f}'
-        if hd_ld_opt is not None:
+        if hd_ld_opt != '':
             hist_label = hist_label + '\n' + var_labels[hd_ld_opt]
         
         bins_for_step = np.repeat(x_edges, 2)
@@ -108,7 +108,7 @@ def makeUnroll(data, data_var, binning_var, hd_ld_opt, pu, path_to_save):
         hist_label = rf'{min_e:.2f} < {binning_var_label} < {max_e:.2f}'
 
         x_label = var_labels[data_var]
-        if hd_ld_opt is not None:
+        if hd_ld_opt != '':
             x_label = x_label + '\n' + var_labels[hd_ld_opt]
 
 
@@ -169,7 +169,7 @@ def plotEfficiency(data, binning_var, threshold, hd_ld_opt, pu, path_to_save):
     fig, ax = plt.subplots()
 
     x_label = var_labels[binning_var]
-    if hd_ld_opt is not None:
+    if hd_ld_opt != '':
         x_label = x_label + '\n' + var_labels[hd_ld_opt]
     
     bin_centers = (x_edges[1:] + x_edges[:-1])/2

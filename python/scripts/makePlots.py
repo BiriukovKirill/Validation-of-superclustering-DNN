@@ -45,6 +45,7 @@ for root, dirs, files in os.walk(args.input):
 
         data = src_file.split('/')[-2]
         binning_var = src_file.split('/')[-1].split('.')[0]
+        hd_ld_opt = ''
         if binning_var.split('_')[-1] == 'hd':
             binning_var = binning_var[:-3]
             hd_ld_opt = 'hd'
@@ -56,7 +57,8 @@ for root, dirs, files in os.walk(args.input):
         
         if data == 'efficiency':
             threshold = src_file.split('/')[-3].split('_')[-1]
-            dest_file = os.path.join(target_path, f'{binning_var}_{threshold}.png')
+            dest_file = os.path.join(target_path, f'{binning_var}_{hd_ld_opt}_{threshold}.png')
+            print(f'{binning_var}_{hd_ld_opt}_{threshold}')
             plotEfficiency(loaded_hist, binning_var, threshold, hd_ld_opt, args.pu, dest_file)
         else:
             #find required attributes in config

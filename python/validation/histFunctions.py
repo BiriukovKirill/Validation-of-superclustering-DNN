@@ -35,16 +35,18 @@ def efficiencyLabel(efficiency):
     except:
         return ef
     
-def makeEdges(df, var, nbins, opt, dynamic=False):
+def makeEdges(df, var, nbins, opt, dynamic=False, primary_var=True):
     array = df[var]
 
     if dynamic:
         binning_factor = getBinningFactor(array)
         nbins = int(nbins*binning_factor)
+    
+    rebin_vars = {'nTracksters', 'n_scls_per_event', 'n_scls_per_cp', "n_tr_per_scls"}
 
     min_val = np.min(array)
     max_val = np.max(array)
-    if (var == 'nTracksters') or (var == 'n_scls_per_event') or (var == 'n_scls_per_cp') or (var == "n_tr_per_scls"):
+    if (var in rebin_vars) and primary_var:
         nbins = int(max_val - min_val + 1)
     if opt == 'lin':
         return np.linspace(min_val, max_val, nbins + 1)
@@ -76,7 +78,7 @@ def makeEfficiencyHist(df, df_full, where_to_save):
             df_full = df_full[df_full['sim_barycenter_eta'] < 2.15]
             postfix = '_ld'
         
-        edges = makeEdges(df, var, bins, opt)
+        edges = makeEdges(df, var, bins, opt, primary_var = False)
         efficiency_per_var = []
         nevents_per_var = []
         for ef_bin in range(len(edges) - 1):

@@ -91,7 +91,7 @@ for i, ef in enumerate(args.efficiency):
                 postfix = '_ld'
                 hd_ld_opt = 'ld'
             
-            y_edges = makeEdges(df, var, bins, opt)
+            y_edges = makeEdges(df, var, bins, opt, primary_var=False)
 
             if data == 'n_scls_per_event':
                 if df_orig is None:
